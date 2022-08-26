@@ -1,10 +1,10 @@
 {
   "name": "rap-name-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,15 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongodb": "^3.7.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessefrench/rap-names-express-main.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jessefrench/rap-names-express-main/issues"
+  },
+  "homepage": "https://github.com/jessefrench/rap-names-express-main#readme",
+  "description": ""
 }
