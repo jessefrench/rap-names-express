@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rap Names Express</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Current Rappers</h1>
-    <ul class="rappers">
-    <% for(let i=0; i < info.length; i++) {%>
-        <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
-            <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
-            <span class='fa fa-trash'></span>
-        </li>
-    <% } %>
-    </ul>
-
-    <h2>Add A Rapper:</h2>
-
-    <form action="/addRapper" method="POST">
-        <input type="text" placeholder="Stage Name" name="stageName">
-        <input type="text" placeholder="Birth Name" name="birthName">
-        <input type="submit">
-    </form>
-    
-
+  </head>
+  <body>
+    <div class="hero min-h-screen bg-base-200">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="text-center lg:text-left">
+          <h2 class="text-5xl font-bold">Current Rappers</h2>
+          <br>
+          <ul class="rappers w-96">
+            <% for(let i=0; i < info.length; i++) {%>
+              <li class="rapper h-10">
+                <span class="font-bold"><%= info[i].stageName %></span>
+                <span class="italic"><%= info[i].birthName %></span>
+                <span><%= info[i].likes %></span>
+                <span class='fa fa-thumbs-up'></span>
+                <span class='fa fa-trash'></span>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div class="card-body">
+            <form action="/addRapper" method="POST">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Add a rapper</span>
+                </label>
+                <input type="text" placeholder="stage name" name="stageName" class="input input-bordered" />
+              </div>
+              <br>
+              <div class="form-control">
+                <input type="text" placeholder="birth name" name="birthName" class="input input-bordered" />
+              </div>
+              <div class="form-control mt-6">
+                <input type="submit" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src='js/main.js'></script>
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
 </html>

@@ -1,17 +1,16 @@
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const PORT = 2121
+const port = 2121
 require('dotenv').config()
-
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'rap'
+    dbName = 'rap-names-express'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
-        console.log(`Connected to ${dbName} Database`)
+        console.log(`Connected to ${dbName} database.`)
         db = client.db(dbName)
     })
     
@@ -20,8 +19,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-
-app.get('/',(request, response)=>{
+app.get('/',(request, response) => {
     db.collection('rappers').find().sort({likes: -1}).toArray()
     .then(data => {
         response.render('index.ejs', { info: data })
@@ -53,7 +51,6 @@ app.put('/addOneLike', (request, response) => {
         response.json('Like Added')
     })
     .catch(error => console.error(error))
-
 })
 
 app.delete('/deleteRapper', (request, response) => {
@@ -63,9 +60,8 @@ app.delete('/deleteRapper', (request, response) => {
         response.json('Rapper Deleted')
     })
     .catch(error => console.error(error))
-
 })
 
-app.listen(process.env.PORT || PORT, ()=>{
-    console.log(`Server running on port ${PORT}`)
+app.listen(process.env.PORT || port, () => {
+    console.log(`Server is running. Listening on port ${port}.`)
 })
