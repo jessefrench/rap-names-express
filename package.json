@@ -1,7 +1,7 @@
 {
   "name": "rap-names-express",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "node server.js"
   },
@@ -9,19 +9,19 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "mongodb": "^3.7.3"
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessefrench/rap-names-express-main.git"
+    "url": "git+https://github.com/jessefrench/rap-names-express.git"
   },
   "bugs": {
-    "url": "https://github.com/jessefrench/rap-names-express-main/issues"
+    "url": "https://github.com/jessefrench/rap-names-express/issues"
   },
-  "homepage": "https://github.com/jessefrench/rap-names-express-main#readme",
+  "homepage": "https://github.com/jessefrench/rap-names-express#readme",
   "description": ""
 }
